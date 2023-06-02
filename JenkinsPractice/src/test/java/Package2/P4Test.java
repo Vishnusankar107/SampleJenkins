@@ -18,6 +18,7 @@ public void m4() {
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		
+		
 	}
 	else if(browser.equals("edge"))
 	{
@@ -29,5 +30,7 @@ public void m4() {
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 	}
+	driver.get(url);
+	System.out.println("success");
 }
 }
