@@ -2,6 +2,7 @@ package Package2;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
@@ -13,10 +14,12 @@ public class P4Test {
 public void m4() {
 	String browser=System.getProperty("browser");
 	String url=System.getProperty("url");
-	if(browser.equals("chrome"))
+	if(browser.equalsIgnoreCase("chrome"))
 	{
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
+		//WebDriverManager.chromedriver().setup();
+		ChromeOptions options=new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		driver=new ChromeDriver(options);
 		
 		
 	}
